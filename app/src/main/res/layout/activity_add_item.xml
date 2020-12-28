@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/DDD"
+    tools:context=".AddItemActivity">
+
+    <TextView
+        android:id="@+id/add_item_title_text_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Welcome_to_todo_list"
+        app:layout_constraintBottom_toTopOf="@+id/item_name_edit_text"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:gravity="center"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="@color/colorA"
+        android:textColor="#000000"/>
+    <EditText
+        android:id="@id/item_name_edit_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/is_urgent_leaner_layout"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/add_item_title_text_view"
+        android:hint="@string/note_name"
+        android:textSize="20sp"
+        android:importantForAutofill="no"
+        android:inputType="text" />
+
+    <LinearLayout
+        android:id="@+id/is_urgent_leaner_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/save_item_add_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/item_name_edit_text">
+
+        <TextView
+            android:id="@+id/is_urgent_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/Urgent"
+            android:layout_marginEnd="40dp"
+            android:textSize="20sp"
+            android:layout_weight="1"/>
+        <CheckBox
+            android:id="@+id/is_urgent_check_box"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"/>
+
+    </LinearLayout>
+    <Button
+        android:id="@+id/save_item_add_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toTopOf="@+id/add_item_cancel_button"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/is_urgent_leaner_layout"
+        android:text="@string/Save"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:padding="10dp"
+        android:onClick="saveItemAction"/>
+    <Button
+        android:id="@+id/add_item_cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/save_item_add_button"
+        android:text="@string/Cancel"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:background="#000000"
+        android:textColor="#ffffff"
+        android:padding="10dp"
+        android:onClick="cancelAction"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
